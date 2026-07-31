@@ -1,0 +1,43 @@
+.sidebar {
+  width: 260px;
+  background: #161B22;
+  border-right: 1px solid #2B313C;
+  padding: 25px 18px;
+}
+
+.logo {
+  margin-bottom: 35px;
+}
+
+.logo h2 {
+  color: #D4AF37;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.logo p {
+  color: #9CA3AF;
+  font-size: 13px;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #D1D5DB;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.sidebar a:hover {
+  background: #20262E;
+  color: #FFFFFF;
+}
+
+.sidebar a.active {
+  background: #D4AF37;
+  color: #000;
+  font-weight: 600;
+}

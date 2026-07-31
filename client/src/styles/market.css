@@ -1,0 +1,279 @@
+/* ============================
+   MARKET ANALYSIS PAGE
+============================ */
+
+.market-container{
+    min-height:100vh;
+    background:#0D1117;
+    color:#fff;
+    padding:30px 40px;
+}
+
+/* ============================
+   HEADER
+============================ */
+
+.market-header{
+    margin-bottom:30px;
+}
+
+.market-header h2{
+    font-size:34px;
+    font-weight:700;
+    color:#ffffff;
+    margin-bottom:8px;
+}
+
+.market-header p{
+    color:#9CA3AF;
+    font-size:15px;
+}
+
+/* ============================
+   KPI CARDS
+============================ */
+
+.market-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    margin-bottom:35px;
+}
+
+.market-card{
+
+    background:#161B22;
+    border:1px solid #2F3747;
+    border-radius:18px;
+
+    padding:24px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.market-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #D4AF37,
+        #F7D774
+    );
+
+}
+
+.market-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 12px 30px rgba(212,175,55,.18);
+
+}
+
+.card-title{
+
+    color:#9CA3AF;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.market-card h2{
+
+    margin-top:15px;
+
+    font-size:34px;
+
+    color:white;
+
+}
+
+.market-growth{
+
+    margin-top:12px;
+
+    color:#22C55E;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* ============================
+   CHART SECTION
+============================ */
+
+.charts-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:28px;
+
+    margin-top:20px;
+
+}
+
+.chart-card{
+
+    background:#161B22;
+
+    border:1px solid #2F3747;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    transition:.3s;
+
+}
+
+.chart-card:hover{
+
+    border-color:#D4AF37;
+
+}
+
+.chart-card h3{
+
+    color:#D4AF37;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+.chart-card canvas{
+
+    width:100% !important;
+
+    height:330px !important;
+
+}
+
+/* ============================
+   PROGRESS CARD
+============================ */
+
+.score-card{
+
+    margin-top:35px;
+
+    background:#161B22;
+
+    border:1px solid #2F3747;
+
+    border-radius:18px;
+
+    padding:28px;
+
+}
+
+.score-card h3{
+
+    color:#D4AF37;
+
+    margin-bottom:25px;
+
+}
+
+/* ============================
+   SUMMARY
+============================ */
+
+.summary-card{
+
+    margin-top:35px;
+
+    background:#161B22;
+
+    border:1px solid #2F3747;
+
+    border-radius:18px;
+
+    padding:28px;
+
+}
+
+.summary-card h3{
+
+    color:#D4AF37;
+
+    margin-bottom:18px;
+
+}
+
+.summary-card p{
+
+    color:#D1D5DB;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+
+@media(max-width:1100px){
+
+.charts-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.market-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.market-container{
+
+padding:20px;
+
+}
+
+.market-header h2{
+
+font-size:28px;
+
+}
+
+.chart-card canvas{
+width:100px !important;
+height:330px !important;
+
+}
+
+}
