@@ -32,25 +32,6 @@ The application is built using React, Node.js, Express.js, PostgreSQL (Neon), an
 - Competitor score charts
 - AI competitor analysis
 
-### ⚠ Risk Assessment
-- Risk score
-- Risk level
-- Business risk analysis
-- Startup failure indicators
-
-### 💡 Recommendations
-- AI-generated business suggestions
-- Improvement recommendations
-- Market entry suggestions
-- Growth strategies
-
-### 📈 Dashboard
-- Startup summary
-- Market score
-- Competitor score
-- Risk score
-- Overall project insights
-
 ---
 
 ## Technology Stack
