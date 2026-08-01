@@ -1,0 +1,26 @@
+Node.js >= 20
+
+React
+Vite
+React Router DOM
+Axios
+Recharts
+
+Express.js
+Node.js
+PostgreSQL
+pg
+dotenv
+cors
+nodemon
+
+Groq API
+
+Neon PostgreSQL
+
+Git
+GitHub
+
+Render
+
+Vercel
