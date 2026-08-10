@@ -72,14 +72,14 @@ function ProjectForm() {
         try {
 
             // Save to PostgreSQL
-            await axios.post(
-                "https://startup-failure-detection.onrender.com/api/projects/submit",
-                formData
-            );
+            // await axios.post(
+            //     "https://startup-failure-detection.onrender.com/api/projects/submit",
+            //     formData
+            // );
 
             // AI Analysis
             const aiResponse = await axios.post(
-                "https://startup-failure-detection.onrender.com/api/ai/analyze",
+                "http://localhost:5000/api/ai/analyze",
                 formData
             );
 

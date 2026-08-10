@@ -1,0 +1,505 @@
+/* =========================================================
+   RISK ASSESSMENT - DARK GOLD THEME
+   ========================================================= */
+
+.risk-container {
+    min-height: 100vh;
+    background: #0D1117;
+    color: #fff;
+    padding: 30px 40px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.risk-container > h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.risk-container .card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 28px;
+
+    transition: .35s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Gold line at top of every card */
+
+.risk-container .card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #D4AF37,
+        #F7D774
+    );
+}
+
+
+/* Card hover */
+
+.risk-container .card:hover {
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 12px 30px rgba(212, 175, 55, .18);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.risk-container .card h2 {
+    color: #D4AF37;
+
+    font-size: 24px;
+
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   OVERALL RISK
+   ========================================================= */
+
+.risk-score {
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 10px 0;
+}
+
+
+/* Risk circle */
+
+.circle {
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    border: 10px solid #D4AF37;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #0D1117;
+
+    box-shadow:
+        0 0 20px rgba(212, 175, 55, .12);
+}
+
+
+/* Percentage */
+
+.circle h2 {
+    margin: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 36px !important;
+}
+
+
+/* Risk text */
+
+.risk-score h3 {
+    color: #ffffff;
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+
+.risk-score p {
+    color: #9CA3AF;
+
+    font-size: 16px;
+}
+
+
+.risk-score strong {
+    color: #D4AF37;
+}
+
+
+/* =========================================================
+   RISK FACTORS
+   ========================================================= */
+
+.risk-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Risk box */
+
+.risk-box {
+    background: #161B22;
+
+    border: 1px solid #2F3747;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    text-align: center;
+
+    transition: .35s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Gold top line */
+
+.risk-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #D4AF37,
+        #F7D774
+    );
+}
+
+
+/* Hover */
+
+.risk-box:hover {
+    transform: translateY(-6px);
+
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 10px 25px rgba(212, 175, 55, .15);
+}
+
+
+.risk-box h3 {
+    color: #D4AF37;
+
+    font-size: 17px;
+
+    margin-bottom: 15px;
+}
+
+
+.risk-box p {
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   SWOT ANALYSIS
+   ========================================================= */
+
+.swot-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* SWOT Box */
+
+.swot-box {
+    background: #161B22;
+
+    border: 1px solid #2F3747;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    min-height: 170px;
+
+    transition: .35s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Gold top line */
+
+.swot-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #D4AF37,
+        #F7D774
+    );
+}
+
+
+/* Hover */
+
+.swot-box:hover {
+    transform: translateY(-5px);
+
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 10px 25px rgba(212, 175, 55, .15);
+}
+
+
+/* SWOT headings */
+
+.swot-box h3 {
+    color: #D4AF37;
+
+    font-size: 19px;
+
+    margin-bottom: 18px;
+}
+
+
+/* SWOT list */
+
+.swot-box ul {
+    padding-left: 20px;
+
+    margin: 0;
+}
+
+
+.swot-box li {
+    color: #D1D5DB;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   FEASIBILITY TABLE
+   ========================================================= */
+
+.feasibility-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: #161B22;
+
+    border: 1px solid #2F3747;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+
+/* Table rows */
+
+.feasibility-table tr {
+    transition: .25s;
+}
+
+
+/* Hover */
+
+.feasibility-table tr:hover {
+    background: #1E2635;
+}
+
+
+/* Table cells */
+
+.feasibility-table td {
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #2F3747;
+
+    color: #D1D5DB;
+
+    font-size: 15px;
+}
+
+
+/* First column */
+
+.feasibility-table td:first-child {
+    color: #ffffff;
+
+    width: 65%;
+}
+
+
+/* Percentage/value column */
+
+.feasibility-table td:last-child {
+    color: #D4AF37;
+
+    font-weight: 600;
+
+    text-align: left;
+}
+
+
+/* Last row */
+
+.feasibility-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+.feasibility-table tr:last-child td {
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+
+.feasibility-table tr:last-child td:last-child {
+    color: #D4AF37;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .risk-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .risk-container {
+        padding: 20px;
+    }
+
+
+    .risk-container > h1 {
+        font-size: 28px;
+    }
+
+
+    /* Overall risk */
+
+    .risk-score {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+
+
+    /* Risk factors */
+
+    .risk-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* SWOT */
+
+    .swot-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Table */
+
+    .feasibility-table {
+        font-size: 14px;
+    }
+
+
+    .feasibility-table td {
+        padding: 13px 10px;
+    }
+
+}

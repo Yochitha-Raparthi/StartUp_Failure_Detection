@@ -6,7 +6,7 @@ const cors = require("cors");
 const analysisRoutes = require("./routes/analysisRoutes");
 const projectRoutes = require("./routes/projectRoutes");
 const aiRoutes = require("./routes/aiRoutes");
-
+const riskRoutes = require("./routes/riskRoutes");
 
 
 const app = express();
@@ -17,6 +17,7 @@ app.use(express.json());
 app.use("/api/projects", projectRoutes);
 app.use("/api", analysisRoutes);
 app.use("/api/ai", aiRoutes);
+app.use("/api/risk", riskRoutes);
 
 app.get("/", (req, res) => {
     res.send("Startup Failure Detection API Running");
