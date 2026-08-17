@@ -266,35 +266,29 @@ RULES
 
 
         const completion =
-            await groq.chat.completions.create({
+    await groq.chat.completions.create({
 
-                model: "llama-3.3-70b-versatile",
+        model: "openai/gpt-oss-120b",
 
-                temperature: 0.2,
+        temperature: 0.2,
 
-                response_format: {
-                    type: "json_object"
-                },
+        response_format: {
+            type: "json_object"
+        },
 
-                messages: [
+        messages: [
+            {
+                role: "system",
+                content:
+                    "You are a startup evaluation expert. Always return valid JSON."
+            },
+            {
+                role: "user",
+                content: prompt
+            }
+        ]
 
-                    {
-                        role: "system",
-
-                        content:
-                            "You are a startup evaluation expert. Always return valid JSON."
-                    },
-
-                    {
-                        role: "user",
-
-                        content: prompt
-                    }
-
-                ]
-
-            });
-
+    });
 
         // ==================================================
         // 4. PARSE MAIN AI RESPONSE

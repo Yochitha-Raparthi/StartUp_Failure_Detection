@@ -1,20 +1,24 @@
-const completion = await groq.chat.completions.create({
+const completion =
+    await groq.chat.completions.create({
 
-    model: "llama-3.3-70b-versatile",
+        model: "openai/gpt-oss-120b",
 
-    temperature: 0.2,
+        temperature: 0.2,
 
-    max_tokens: 3500,
+        response_format: {
+            type: "json_object"
+        },
 
-    response_format: {
-        type: "json_object"
-    },
+        messages: [
+            {
+                role: "system",
+                content:
+                    "You are a startup evaluation expert. Always return valid JSON."
+            },
+            {
+                role: "user",
+                content: prompt
+            }
+        ]
 
-    messages: [
-        {
-            role: "user",
-            content: prompt
-        }
-    ]
-
-});
+    });

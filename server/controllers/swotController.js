@@ -104,35 +104,29 @@ RULES
 
 
         const completion =
-            await groq.chat.completions.create({
+    await groq.chat.completions.create({
 
-                model: "llama-3.3-70b-versatile",
+        model: "openai/gpt-oss-120b",
 
-                temperature: 0.2,
+        temperature: 0.2,
 
-                response_format: {
-                    type: "json_object"
-                },
+        response_format: {
+            type: "json_object"
+        },
 
-                messages: [
+        messages: [
+            {
+                role: "system",
+                content:
+                    "You are a startup strategic reasoning expert. Always return valid JSON."
+            },
+            {
+                role: "user",
+                content: prompt
+            }
+        ]
 
-                    {
-                        role: "system",
-
-                        content:
-                            "You are a startup SWOT and feasibility analysis expert. Always return valid JSON."
-                    },
-
-                    {
-                        role: "user",
-
-                        content: prompt
-                    }
-
-                ]
-
-            });
-
+    });
 
         const content =
             completion.choices[0].message.content;

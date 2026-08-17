@@ -1,37 +1,255 @@
-.dashboard-grid{
+.dashboard-container {
+    min-height: 100vh;
+    background: #0D1117;
+    color: #fff;
+    padding: 30px 40px;
+}
 
-    display:grid;
 
-    grid-template-columns:1fr 2fr;
+/* ================= HEADER ================= */
 
-    gap:20px;
+.dashboard-header {
+    margin-bottom: 30px;
+}
 
-    padding:30px;
+.dashboard-header h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    color: #9CA3AF;
+    font-size: 15px;
+}
+
+
+/* ================= KPI GRID ================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+
+/* ================= KPI CARD ================= */
+
+.dashboard-card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 18px;
+
+    padding: 24px;
+
+    transition: .35s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+.dashboard-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #D4AF37,
+        #F7D774
+    );
+}
+
+
+.dashboard-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 12px 30px
+        rgba(212, 175, 55, .18);
+}
+
+
+.card-title {
+    color: #9CA3AF;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.dashboard-card h2 {
+    margin-top: 15px;
+
+    font-size: 34px;
+
+    color: #ffffff;
+}
+
+
+/* ================= RECOMMENDATIONS ================= */
+
+.recommendations-card {
+
+    margin-top: 35px;
+
+    background: #161B22;
+
+    border: 1px solid #2F3747;
+
+    border-radius: 18px;
+
+    padding: 28px;
+}
+
+
+.recommendations-card h3 {
+
+    color: #D4AF37;
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= RECOMMENDATION ITEM ================= */
+
+.recommendations-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.recommendation-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    background: #1B222C;
+
+    border: 1px solid #30363D;
+
+    border-radius: 12px;
+
+    transition: .3s;
+}
+
+
+.recommendation-item:hover {
+
+    border-color: #D4AF37;
+
+    transform: translateX(5px);
+}
+
+
+/* Number */
+
+.recommendation-number {
+
+    min-width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #D4AF37;
+
+    color: #0D1117;
+
+    font-weight: 700;
 
 }
 
-.project-box,
-.market-box,
-.competitor-box{
 
-    background:#1e293b;
+/* Text */
 
-    border-radius:12px;
+.recommendation-item p {
 
-    padding:25px;
+    margin: 5px 0 0;
+
+    color: #D1D5DB;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+}
+
+
+/* No data */
+
+.no-data {
+
+    color: #9CA3AF;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
 
 }
 
-.competitor-box{
 
-    grid-column:1/3;
+@media (max-width: 768px) {
 
-}
+    .dashboard-container {
 
-.project-box h2,
-.market-box h2,
-.competitor-box h2{
+        padding: 20px;
 
-    margin-bottom:20px;
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .dashboard-header h2 {
+
+        font-size: 28px;
+
+    }
 
 }
