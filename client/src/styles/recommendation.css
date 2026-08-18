@@ -1,0 +1,222 @@
+.recommendation-container {
+    min-height: 100vh;
+    background: #0D1117;
+    color: #ffffff;
+    padding: 35px 40px;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.recommendation-header {
+    margin-bottom: 35px;
+}
+
+.recommendation-header h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.recommendation-header p {
+    color: #9CA3AF;
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   SECTION
+========================================== */
+
+.recommendation-section {
+    margin-bottom: 40px;
+}
+
+.recommendation-section h3 {
+    color: #D4AF37;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+
+    gap: 22px;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.recommendation-card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 18px;
+
+    padding: 24px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.recommendation-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #D4AF37,
+        #F7D774
+    );
+}
+
+.recommendation-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 12px 30px
+        rgba(212, 175, 55, 0.15);
+}
+
+
+/* ==========================================
+   CARD TOP
+========================================== */
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.area {
+    color: #9CA3AF;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   PRIORITY
+========================================== */
+
+.priority {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+.priority.high {
+    background: rgba(239, 68, 68, 0.15);
+
+    color: #EF4444;
+}
+
+.priority.medium {
+    background: rgba(245, 158, 11, 0.15);
+
+    color: #F59E0B;
+}
+
+.priority.low {
+    background: rgba(34, 197, 94, 0.15);
+
+    color: #22C55E;
+}
+
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.recommendation-card h4 {
+    color: #ffffff;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+.recommendation-card p {
+    color: #D1D5DB;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.recommendation-card strong {
+    color: #D4AF37;
+}
+
+
+/* ==========================================
+   STRATEGIC CARD
+========================================== */
+
+.strategic-card {
+    border-color: #3A3F4B;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .recommendation-container {
+        padding: 25px 20px;
+    }
+
+    .recommendation-header h2 {
+        font-size: 28px;
+    }
+
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
