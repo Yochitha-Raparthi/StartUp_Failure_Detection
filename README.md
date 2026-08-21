@@ -2,15 +2,16 @@
 
 ## Overview
 
-Smart Failure Detection System is an AI-powered web application that helps entrepreneurs evaluate startup ideas before implementation. The application analyzes market conditions, competitor information, business risks, SWOT factors, project feasibility, and generates AI-powered recommendations to support better business decisions.
+Smart Failure Detection System is an AI-powered web application that helps entrepreneurs evaluate startup ideas before implementation. The application analyzes market conditions, competitor information, business risks, SWOT factors, project feasibility, and generates AI-powered strategic recommendations to support better business decisions.
 
-The application is built using React, Node.js, Express.js, PostgreSQL (Neon), and the Groq AI API.
+The application is built using React, Node.js, Express.js, PostgreSQL (Neon), Groq AI, and LangGraph.
 
 ---
 
 ## Features
 
 ### Project Submission
+
 - Submit startup information
 - Industry selection
 - Business model selection
@@ -19,6 +20,7 @@ The application is built using React, Node.js, Express.js, PostgreSQL (Neon), an
 - Project description
 
 ### Market Analysis
+
 - Market growth analysis
 - TAM, SAM and SOM visualization
 - Market opportunity score
@@ -26,6 +28,7 @@ The application is built using React, Node.js, Express.js, PostgreSQL (Neon), an
 - AI-generated market insights
 
 ### Competitor Analysis
+
 - Competitor comparison table
 - Competition level
 - Market share visualization
@@ -33,6 +36,7 @@ The application is built using React, Node.js, Express.js, PostgreSQL (Neon), an
 - AI competitor analysis
 
 ### Risk Assessment
+
 - Overall risk score
 - Success probability
 - Financial risk assessment
@@ -42,6 +46,7 @@ The application is built using React, Node.js, Express.js, PostgreSQL (Neon), an
 - AI-based project risk evaluation
 
 ### SWOT Analysis
+
 - AI-generated Strengths analysis
 - AI-generated Weaknesses analysis
 - AI-generated Opportunities analysis
@@ -49,6 +54,7 @@ The application is built using React, Node.js, Express.js, PostgreSQL (Neon), an
 - Startup-specific SWOT evaluation based on project information
 
 ### Project Feasibility Assessment
+
 - Technical feasibility assessment
 - Financial feasibility assessment
 - Market feasibility assessment
@@ -56,64 +62,53 @@ The application is built using React, Node.js, Express.js, PostgreSQL (Neon), an
 - Overall project feasibility classification
 
 ### AI Recommendations
-- AI-generated recommendations based on the project analysis
+
+- AI-generated recommendations based on project analysis
 - Recommendations based on market conditions, competition, risks, and feasibility
+- Problem identification based on project analysis
+- Risk mitigation strategies
+- Project improvement suggestions
+- Strategic recommendations
+- Priority-based recommendation generation
 
-### Dashboard
-- Overall project score
-- Market readiness score
-- Innovation score
-- Investment score
-- Summary of the project evaluation
+### Strategic Reasoning with LangGraph
 
----
+The system uses a LangGraph-based workflow to perform structured multi-step strategic reasoning.
 
-## Technology Stack
+The recommendation workflow consists of four sequential stages:
 
-### Frontend
-- React.js
-- Vite
-- React Router
-- Axios
-- Recharts
-- CSS
+1. **Problem Identification**
+   - Identifies the major problems affecting the startup.
+   - Uses project information, risk assessment, SWOT analysis, and feasibility results.
 
-### Backend
-- Node.js
-- Express.js
+2. **Risk Mitigation**
+   - Generates practical strategies to reduce or control identified risks.
+   - Prioritizes risks based on their impact.
 
-### Database
-- PostgreSQL
-- Neon Database
+3. **Improvement Suggestions**
+   - Generates project-specific improvements.
+   - Uses identified problems, SWOT factors, and feasibility results.
 
-### AI Integration
-- Groq API
-- Llama 3.3 70B
+4. **Strategic Recommendations**
+   - Combines the identified problems, mitigation strategies, and improvement suggestions.
+   - Generates final actionable recommendations for the startup.
 
-### Deployment
-- Vercel (Frontend)
-- Render (Backend)
-
----
-
-## Project Structure
+The workflow follows:
 
 ```text
-StartUp_Failure_Detection
-│
-├── client
-│   ├── src
-│   ├── public
-│   └── package.json
-│
-├── server
-│   ├── config
-│   ├── controllers
-│   ├── routes
-│   ├── services
-│   ├── server.js
-│   └── package.json
-│
-├── database.sql
-├── README.md
-└── .gitignore
+Project Information
+        |
+        v
+Existing Project Analysis
+        |
+        v
+Problem Identification
+        |
+        v
+Risk Mitigation Strategies
+        |
+        v
+Improvement Suggestions
+        |
+        v
+Strategic Recommendations
