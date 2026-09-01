@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ProjectContext } from "../context/ProjectContext";
 import "../styles/recommendation.css";
 
+
 function Recommendation() {
 
     const { analysis } = useContext(ProjectContext);
