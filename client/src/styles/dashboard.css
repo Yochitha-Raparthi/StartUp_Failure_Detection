@@ -5,215 +5,358 @@
     padding: 30px 40px;
 }
 
-
-/* ================= HEADER ================= */
-
 .dashboard-header {
     margin-bottom: 30px;
 }
 
 .dashboard-header h2 {
     font-size: 34px;
-    font-weight: 700;
-    color: #ffffff;
     margin-bottom: 8px;
 }
 
 .dashboard-header p {
     color: #9CA3AF;
-    font-size: 15px;
 }
 
 
-/* ================= KPI GRID ================= */
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    margin: 30px 0 18px;
+    font-size: 22px;
+    color: #D4AF37;
+}
+
+
+/* ================= PROJECT SUMMARY ================= */
+
+.project-summary-card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.project-summary-card h3 {
+    margin-bottom: 20px;
+    color: #D4AF37;
+}
+
+.project-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.project-summary-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.project-summary-grid span {
+    color: #9CA3AF;
+    font-size: 13px;
+}
+
+.project-summary-grid strong {
+    color: #fff;
+}
+
+
+/* ================= KPI ================= */
 
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 22px;
-    margin-bottom: 35px;
 }
-
-
-/* ================= KPI CARD ================= */
 
 .dashboard-card {
     background: #161B22;
     border: 1px solid #2F3747;
     border-radius: 18px;
-
     padding: 24px;
-
-    transition: .35s;
-
     position: relative;
     overflow: hidden;
+    transition: .3s;
 }
-
 
 .dashboard-card::before {
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 4px;
-
-    background: linear-gradient(
-        90deg,
-        #D4AF37,
-        #F7D774
-    );
+    background: #D4AF37;
 }
-
 
 .dashboard-card:hover {
-    transform: translateY(-6px);
-
+    transform: translateY(-5px);
     border-color: #D4AF37;
-
-    box-shadow:
-        0 12px 30px
-        rgba(212, 175, 55, .18);
 }
-
 
 .card-title {
     color: #9CA3AF;
-
     font-size: 13px;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
 }
 
-
 .dashboard-card h2 {
     margin-top: 15px;
-
     font-size: 34px;
+}
 
-    color: #ffffff;
+
+/* ================= RISK ================= */
+
+.risk-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.risk-card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 15px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.risk-card span {
+    color: #9CA3AF;
+}
+
+.risk-card strong {
+    font-size: 25px;
+}
+
+
+/* ================= RISK STATUS ================= */
+
+.risk-status-card {
+    margin-top: 20px;
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 18px;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.risk-status-card h2 {
+    margin-top: 8px;
+}
+
+
+/* ================= FEASIBILITY ================= */
+
+.feasibility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.feasibility-card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 15px;
+    padding: 22px;
+}
+
+.feasibility-card span {
+    color: #9CA3AF;
+}
+
+.feasibility-card strong {
+    float: right;
+    font-size: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #30363D;
+    border-radius: 10px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+
+.progress-bar div {
+    height: 100%;
+    background: #D4AF37;
+    border-radius: 10px;
+}
+
+.feasibility-status {
+    margin-top: 18px;
+    padding: 20px;
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.feasibility-status span {
+    color: #9CA3AF;
+}
+
+
+/* ================= COMPETITOR ================= */
+
+.competitor-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.competitor-summary div {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.competitor-summary span {
+    display: block;
+    color: #9CA3AF;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+
+/* ================= SWOT ================= */
+
+.swot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.swot-card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 15px;
+    padding: 22px;
+}
+
+.swot-card h3 {
+    color: #D4AF37;
+    margin-bottom: 15px;
+}
+
+.swot-card li {
+    color: #D1D5DB;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 
 /* ================= RECOMMENDATIONS ================= */
 
 .recommendations-card {
-
-    margin-top: 35px;
-
+    margin-top: 30px;
     background: #161B22;
-
     border: 1px solid #2F3747;
-
     border-radius: 18px;
-
     padding: 28px;
 }
 
-
 .recommendations-card h3 {
-
     color: #D4AF37;
-
-    font-size: 22px;
-
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
-
-
-/* ================= RECOMMENDATION ITEM ================= */
 
 .recommendations-list {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
 }
-
 
 .recommendation-item {
-
     display: flex;
-
-    align-items: flex-start;
-
     gap: 15px;
-
     padding: 18px;
-
     background: #1B222C;
-
     border: 1px solid #30363D;
-
     border-radius: 12px;
-
-    transition: .3s;
 }
-
-
-.recommendation-item:hover {
-
-    border-color: #D4AF37;
-
-    transform: translateX(5px);
-}
-
-
-/* Number */
 
 .recommendation-number {
-
     min-width: 32px;
-
     height: 32px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 50%;
-
     background: #D4AF37;
-
     color: #0D1117;
-
     font-weight: 700;
-
 }
-
-
-/* Text */
 
 .recommendation-item p {
-
-    margin: 5px 0 0;
-
     color: #D1D5DB;
-
     line-height: 1.6;
-
-    font-size: 15px;
+    margin: 5px 0;
 }
 
 
-/* No data */
+/* ================= STRATEGIC ================= */
+
+.strategic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.strategic-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #1B222C;
+    border: 1px solid #30363D;
+    border-radius: 12px;
+}
+
+.strategic-item > span {
+    min-width: 70px;
+    height: fit-content;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #D4AF37;
+    color: #0D1117;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.strategic-item strong {
+    color: #fff;
+}
+
+.strategic-item p {
+    color: #D1D5DB;
+    margin: 8px 0;
+}
+
+.strategic-item small {
+    color: #9CA3AF;
+}
+
+
+/* ================= NO DATA ================= */
 
 .no-data {
-
     color: #9CA3AF;
-
     text-align: center;
-
     padding: 20px;
 }
 
@@ -222,34 +365,37 @@
 
 @media (max-width: 1100px) {
 
-    .dashboard-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    .dashboard-grid,
+    .project-summary-grid,
+    .competitor-summary {
+        grid-template-columns: repeat(2, 1fr);
     }
 
+    .risk-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-
 
 @media (max-width: 768px) {
 
     .dashboard-container {
-
         padding: 20px;
-
     }
 
-    .dashboard-grid {
-
+    .dashboard-grid,
+    .project-summary-grid,
+    .risk-grid,
+    .feasibility-grid,
+    .competitor-summary,
+    .swot-grid {
         grid-template-columns: 1fr;
+    }
 
+    .risk-status-card {
+        grid-template-columns: 1fr;
     }
 
     .dashboard-header h2 {
-
         font-size: 28px;
-
     }
-
 }
