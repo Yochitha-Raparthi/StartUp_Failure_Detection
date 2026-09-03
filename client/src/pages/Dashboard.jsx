@@ -2,11 +2,23 @@ import { useContext } from "react";
 import { ProjectContext } from "../context/ProjectContext";
 import "../styles/dashboard.css";
 
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    ResponsiveContainer
+} from "recharts";
+
+
 const Dashboard = () => {
 
     const { analysis, project } = useContext(ProjectContext);
 
     console.log("Dashboard Analysis:", analysis);
+
 
     // ==========================================
     // NO ANALYSIS
@@ -43,6 +55,54 @@ const Dashboard = () => {
     const swot = analysis.swot_analysis || {};
 
 
+    // ==========================================
+    // RISK CHART DATA
+    // ==========================================
+
+    const riskChartData = [
+        {
+            name: "Financial",
+            value: risk.financial_risk ?? 0
+        },
+        {
+            name: "Market",
+            value: risk.market_risk ?? 0
+        },
+        {
+            name: "Technical",
+            value: risk.technical_risk ?? 0
+        },
+        {
+            name: "Execution",
+            value: risk.execution_risk ?? 0
+        }
+    ];
+
+
+    // ==========================================
+    // FEASIBILITY CHART DATA
+    // ==========================================
+
+    const feasibilityChartData = [
+        {
+            name: "Technical",
+            value: feasibility.technical_feasibility ?? 0
+        },
+        {
+            name: "Financial",
+            value: feasibility.financial_feasibility ?? 0
+        },
+        {
+            name: "Market",
+            value: feasibility.market_feasibility ?? 0
+        },
+        {
+            name: "Operational",
+            value: feasibility.operational_feasibility ?? 0
+        }
+    ];
+
+
     return (
 
         <div className="dashboard-container">
@@ -75,27 +135,34 @@ const Dashboard = () => {
 
                     <div>
                         <span>Startup Name</span>
+
                         <strong>
                             {project?.startupName || "N/A"}
                         </strong>
                     </div>
 
+
                     <div>
                         <span>Industry</span>
+
                         <strong>
                             {project?.industry || "N/A"}
                         </strong>
                     </div>
 
+
                     <div>
                         <span>Business Model</span>
+
                         <strong>
                             {project?.businessModel || "N/A"}
                         </strong>
                     </div>
 
+
                     <div>
                         <span>Target Market</span>
+
                         <strong>
                             {project?.targetMarket || "N/A"}
                         </strong>
@@ -113,6 +180,7 @@ const Dashboard = () => {
             <h3 className="section-title">
                 Overall Evaluation
             </h3>
+
 
             <div className="dashboard-grid">
 
@@ -178,6 +246,7 @@ const Dashboard = () => {
             <h3 className="section-title">
                 Risk Assessment
             </h3>
+
 
             <div className="risk-grid">
 
@@ -285,6 +354,160 @@ const Dashboard = () => {
 
 
             {/* ==========================================
+                RISK & FEASIBILITY CHARTS
+            ========================================== */}
+
+            <h3 className="section-title">
+                Risk & Feasibility Analysis
+            </h3>
+
+
+            <div className="charts-grid">
+
+
+                {/* ==========================================
+                    RISK CHART
+                ========================================== */}
+
+                <div className="chart-card">
+
+                    <h3>
+                        Risk Analysis
+                    </h3>
+
+                    <p>
+                        Comparison of major project risk factors
+                    </p>
+
+
+                    <div className="chart-wrapper">
+
+                        <ResponsiveContainer
+                            width="100%"
+                            height="100%"
+                        >
+
+                            <BarChart
+                                data={riskChartData}
+                            >
+
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                    stroke="#30363D"
+                                />
+
+                                <XAxis
+                                    dataKey="name"
+                                    tick={{ fill: "#9CA3AF" }}
+                                    axisLine={{ stroke: "#2F3747" }}
+                                    tickLine={{ stroke: "#2F3747" }}
+                                />
+
+                                <YAxis
+                                    domain={[0, 100]}
+                                    tick={{ fill: "#9CA3AF" }}
+                                    axisLine={{ stroke: "#2F3747" }}
+                                    tickLine={{ stroke: "#2F3747" }}
+                                />
+
+                                <Tooltip
+                                    contentStyle={{
+                                        background: "#161B22",
+                                        border: "1px solid #D4AF37",
+                                        borderRadius: "10px",
+                                        color: "#ffffff"
+                                    }}
+                                />
+
+                                <Bar
+                                    dataKey="value"
+                                    name="Risk Score"
+                                    fill="#D4AF37"
+                                    radius={[6, 6, 0, 0]}
+                                />
+
+                            </BarChart>
+
+                        </ResponsiveContainer>
+
+                    </div>
+
+                </div>
+
+
+                {/* ==========================================
+                    FEASIBILITY CHART
+                ========================================== */}
+
+                <div className="chart-card">
+
+                    <h3>
+                        Feasibility Analysis
+                    </h3>
+
+                    <p>
+                        Comparison of project feasibility factors
+                    </p>
+
+
+                    <div className="chart-wrapper">
+
+                        <ResponsiveContainer
+                            width="100%"
+                            height="100%"
+                        >
+
+                            <BarChart
+                                data={feasibilityChartData}
+                            >
+
+                                <CartesianGrid
+                                    strokeDasharray="3 3"
+                                    stroke="#30363D"
+                                />
+
+                                <XAxis
+                                    dataKey="name"
+                                    tick={{ fill: "#9CA3AF" }}
+                                    axisLine={{ stroke: "#2F3747" }}
+                                    tickLine={{ stroke: "#2F3747" }}
+                                />
+
+                                <YAxis
+                                    domain={[0, 100]}
+                                    tick={{ fill: "#9CA3AF" }}
+                                    axisLine={{ stroke: "#2F3747" }}
+                                    tickLine={{ stroke: "#2F3747" }}
+                                />
+
+                                <Tooltip
+                                    contentStyle={{
+                                        background: "#161B22",
+                                        border: "1px solid #D4AF37",
+                                        borderRadius: "10px",
+                                        color: "#ffffff"
+                                    }}
+                                />
+
+                                <Bar
+                                    dataKey="value"
+                                    name="Feasibility Score"
+                                    fill="#D4AF37"
+                                    radius={[6, 6, 0, 0]}
+                                />
+
+                            </BarChart>
+
+                        </ResponsiveContainer>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            {/* ==========================================
                 FEASIBILITY
             ========================================== */}
 
@@ -292,12 +515,15 @@ const Dashboard = () => {
                 Feasibility Assessment
             </h3>
 
+
             <div className="feasibility-grid">
 
 
                 <div className="feasibility-card">
 
-                    <span>Technical Feasibility</span>
+                    <span>
+                        Technical Feasibility
+                    </span>
 
                     <strong>
                         {feasibility.technical_feasibility ?? 0}%
@@ -318,7 +544,9 @@ const Dashboard = () => {
 
                 <div className="feasibility-card">
 
-                    <span>Financial Feasibility</span>
+                    <span>
+                        Financial Feasibility
+                    </span>
 
                     <strong>
                         {feasibility.financial_feasibility ?? 0}%
@@ -339,7 +567,9 @@ const Dashboard = () => {
 
                 <div className="feasibility-card">
 
-                    <span>Market Feasibility</span>
+                    <span>
+                        Market Feasibility
+                    </span>
 
                     <strong>
                         {feasibility.market_feasibility ?? 0}%
@@ -360,7 +590,9 @@ const Dashboard = () => {
 
                 <div className="feasibility-card">
 
-                    <span>Operational Feasibility</span>
+                    <span>
+                        Operational Feasibility
+                    </span>
 
                     <strong>
                         {feasibility.operational_feasibility ?? 0}%
@@ -383,7 +615,9 @@ const Dashboard = () => {
 
             <div className="feasibility-status">
 
-                <span>Overall Feasibility</span>
+                <span>
+                    Overall Feasibility
+                </span>
 
                 <strong>
                     {feasibility.overall_feasibility || "Not Available"}
@@ -400,11 +634,15 @@ const Dashboard = () => {
                 Competitor Intelligence
             </h3>
 
+
             <div className="competitor-summary">
+
 
                 <div>
 
-                    <span>Competition Level</span>
+                    <span>
+                        Competition Level
+                    </span>
 
                     <strong>
                         {competitor.competition_level || "N/A"}
@@ -412,9 +650,12 @@ const Dashboard = () => {
 
                 </div>
 
+
                 <div>
 
-                    <span>Competitor Score</span>
+                    <span>
+                        Competitor Score
+                    </span>
 
                     <strong>
                         {competitor.competitor_score ?? 0}%
@@ -422,9 +663,12 @@ const Dashboard = () => {
 
                 </div>
 
+
                 <div>
 
-                    <span>Industry Competitiveness</span>
+                    <span>
+                        Industry Competitiveness
+                    </span>
 
                     <strong>
                         {competitor.industry_competitiveness ?? 0}%
@@ -432,9 +676,12 @@ const Dashboard = () => {
 
                 </div>
 
+
                 <div>
 
-                    <span>Market Concentration</span>
+                    <span>
+                        Market Concentration
+                    </span>
 
                     <strong>
                         {competitor.market_concentration || "N/A"}
@@ -453,20 +700,25 @@ const Dashboard = () => {
                 SWOT Analysis
             </h3>
 
+
             <div className="swot-grid">
 
 
                 <div className="swot-card">
 
-                    <h3>Strengths</h3>
+                    <h3>
+                        Strengths
+                    </h3>
 
                     <ul>
 
                         {(swot.strengths || []).map(
                             (item, index) => (
+
                                 <li key={index}>
                                     {item}
                                 </li>
+
                             )
                         )}
 
@@ -477,15 +729,19 @@ const Dashboard = () => {
 
                 <div className="swot-card">
 
-                    <h3>Weaknesses</h3>
+                    <h3>
+                        Weaknesses
+                    </h3>
 
                     <ul>
 
                         {(swot.weaknesses || []).map(
                             (item, index) => (
+
                                 <li key={index}>
                                     {item}
                                 </li>
+
                             )
                         )}
 
@@ -496,15 +752,19 @@ const Dashboard = () => {
 
                 <div className="swot-card">
 
-                    <h3>Opportunities</h3>
+                    <h3>
+                        Opportunities
+                    </h3>
 
                     <ul>
 
                         {(swot.opportunities || []).map(
                             (item, index) => (
+
                                 <li key={index}>
                                     {item}
                                 </li>
+
                             )
                         )}
 
@@ -515,15 +775,19 @@ const Dashboard = () => {
 
                 <div className="swot-card">
 
-                    <h3>Threats</h3>
+                    <h3>
+                        Threats
+                    </h3>
 
                     <ul>
 
                         {(swot.threats || []).map(
                             (item, index) => (
+
                                 <li key={index}>
                                     {item}
                                 </li>
+
                             )
                         )}
 
@@ -540,7 +804,10 @@ const Dashboard = () => {
 
             <div className="recommendations-card">
 
-                <h3>AI Recommendations</h3>
+                <h3>
+                    AI Recommendations
+                </h3>
+
 
                 <div className="recommendations-list">
 
@@ -586,7 +853,10 @@ const Dashboard = () => {
 
             <div className="recommendations-card">
 
-                <h3>Strategic Recommendations</h3>
+                <h3>
+                    Strategic Recommendations
+                </h3>
+
 
                 <div className="strategic-list">
 
@@ -601,6 +871,7 @@ const Dashboard = () => {
                                 <span>
                                     {item.priority || "Priority"}
                                 </span>
+
 
                                 <div>
 
@@ -631,5 +902,6 @@ const Dashboard = () => {
         </div>
     );
 };
+
 
 export default Dashboard;
