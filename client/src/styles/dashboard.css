@@ -399,3 +399,43 @@
         font-size: 28px;
     }
 }
+/* ================= CHARTS ================= */
+
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.chart-card {
+    background: #161B22;
+    border: 1px solid #2F3747;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+.chart-card h3 {
+    color: #D4AF37;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.chart-card p {
+    color: #9CA3AF;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.chart-wrapper {
+    width: 100%;
+    height: 320px;
+}
+
+@media (max-width: 900px) {
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
