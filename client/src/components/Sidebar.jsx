@@ -2,37 +2,57 @@ import { NavLink } from "react-router-dom";
 import "../styles/sidebar.css";
 
 function Sidebar() {
-  return (
-    <div className="sidebar">
 
-      <div className="logo">
-        <h2>Startup Failure Detection</h2>
-      </div>
+    return (
 
-      <NavLink to="/">Project Input</NavLink>
+        <div className="sidebar">
 
-      <NavLink to="/market">
-        Market Analysis
-      </NavLink>
+            <div className="logo">
 
-      <NavLink to="/competitor">
-        Competitor Intelligence
-      </NavLink>
+                <h2>
+                    Startup Failure Detection
+                </h2>
 
-      <NavLink to="/risk">
-        Risk Assessment
-      </NavLink>
+            </div>
 
-      <NavLink to="/recommendation">
-        Recommendations
-      </NavLink>
 
-      <NavLink to="/dashboard">
-        Dashboard
-      </NavLink>
+            <NavLink to="/">
+                Project Input
+            </NavLink>
 
-    </div>
-  );
+
+            <NavLink to="/market">
+                Market Analysis
+            </NavLink>
+
+
+            <NavLink to="/competitor">
+                Competitor Intelligence
+            </NavLink>
+
+
+            <NavLink to="/risk">
+                Risk Assessment
+            </NavLink>
+
+
+            <NavLink to="/recommendation">
+                Recommendations
+            </NavLink>
+
+
+            <NavLink to="/dashboard">
+                Dashboard
+            </NavLink>
+
+
+            <NavLink to="/report">
+                Assessment Report
+            </NavLink>
+
+        </div>
+
+    );
 }
 
 export default Sidebar;
