@@ -166,52 +166,65 @@ Priority must be:
 // ==========================================
 // 3. IMPROVEMENT SUGGESTIONS
 // ==========================================
-
 async function generateImprovements(state) {
 
     console.log("LANGGRAPH NODE: IMPROVEMENT SUGGESTIONS");
 
     const prompt = `
-You are a startup improvement strategist.
+You are an expert startup improvement strategist.
+
+Analyze the following startup information and generate specific, practical improvements.
 
 PROJECT:
 ${JSON.stringify(state.project, null, 2)}
 
-PROBLEMS:
+PROBLEMS IDENTIFIED:
 ${JSON.stringify(state.problem_identification, null, 2)}
 
-SWOT:
+SWOT ANALYSIS:
 ${JSON.stringify(state.swot_analysis, null, 2)}
 
-FEASIBILITY:
+FEASIBILITY ASSESSMENT:
 ${JSON.stringify(state.feasibility_assessment, null, 2)}
 
-Generate practical improvements for the startup.
+TASK:
+Generate practical improvement suggestions based directly on the identified problems,
+SWOT analysis, and feasibility assessment.
 
-Return ONLY valid JSON.
+IMPORTANT RULES:
+
+1. Generate at least 5 improvement suggestions.
+2. Every object MUST contain a meaningful "area".
+3. Every object MUST contain a meaningful "problem".
+4. Every object MUST contain a specific and actionable "improvement".
+5. The "problem" and "improvement" fields MUST NOT be empty.
+6. NEVER use "N/A", "None", "", "Not available", or placeholder text.
+7. The improvement must explain WHAT the startup should actually do.
+8. Each improvement should be different and address a meaningful startup issue.
+9. Priority must be exactly one of:
+   "High"
+   "Medium"
+   "Low"
+
+Return ONLY valid JSON in exactly this structure:
 
 {
     "improvement_suggestions": [
         {
-            "area": "",
-            "problem": "",
-            "improvement": "",
-            "priority": ""
+            "area": "Market",
+            "problem": "Describe the actual market problem",
+            "improvement": "Describe a specific actionable improvement",
+            "priority": "High"
         }
     ]
 }
-
-Priority must be:
-"High"
-"Medium"
-"Low"
 `;
 
     const completion = await groq.chat.completions.create({
 
         model: "openai/gpt-oss-120b",
 
-        temperature: 0.2,
+        temperature: 0.3,
 
         response_format: {
             type: "json_object"
@@ -221,7 +234,7 @@ Priority must be:
             {
                 role: "system",
                 content:
-                    "You are a startup improvement expert. Return valid JSON only."
+                    "You are an expert startup strategist. Generate specific, actionable recommendations. Never return empty fields or N/A values. Return valid JSON only."
             },
             {
                 role: "user",
@@ -236,9 +249,14 @@ Priority must be:
             completion.choices[0].message.content
         );
 
+    console.log(
+        "IMPROVEMENT AI RESULT:",
+        JSON.stringify(result, null, 2)
+    );
+
     return {
         improvement_suggestions:
-            result.improvement_suggestions
+            result.improvement_suggestions || []
     };
 }
 
