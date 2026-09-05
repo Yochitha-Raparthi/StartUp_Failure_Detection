@@ -278,3 +278,125 @@
     }
 
 }
+/* ==========================================
+   REPORT ACTIONS
+========================================== */
+
+.report-actions {
+    margin-top: 20px;
+}
+
+.report-actions button {
+    background: #D4AF37;
+    color: #0D1117;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.report-actions button:hover {
+    background: #F7D774;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   PRINT REPORT
+========================================== */
+
+@media print {
+
+    .header,
+    .sidebar,
+    .report-actions {
+        display: none !important;
+    }
+
+    .content {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .report-container {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 20px !important;
+    }
+
+    .report-header h2,
+    .report-section > h3 {
+        color: #000000 !important;
+    }
+
+    .report-header p,
+    .report-footer,
+    .report-info-grid span,
+    .report-metric span,
+    .score-card span,
+    .summary-box span {
+        color: #444444 !important;
+    }
+
+    .report-section {
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        break-inside: avoid;
+    }
+
+    .report-info-grid > div,
+    .report-metric,
+    .score-card,
+    .summary-box > div,
+    .report-list-card,
+    .report-list-item,
+    .strategic-report-item,
+    .description-box,
+    .status-box {
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        color: #000000 !important;
+    }
+
+    .report-info-grid strong,
+    .report-metric strong,
+    .score-card strong,
+    .summary-box strong,
+    .strategic-report-item h4 {
+        color: #000000 !important;
+    }
+
+    .score-card strong {
+        color: #8a6d00 !important;
+    }
+
+    .report-list-card h4 {
+        color: #000000 !important;
+    }
+
+    .report-list-card li,
+    .report-list-item p,
+    .description-box p,
+    .strategic-report-item p {
+        color: #222222 !important;
+    }
+
+    .priority-badge {
+        background: #eeeeee !important;
+        color: #000000 !important;
+        border: 1px solid #999999;
+    }
+
+    .status-box strong {
+        color: #000000 !important;
+    }
+
+    .report-list-item > span {
+        background: #eeeeee !important;
+        color: #000000 !important;
+    }
+}
