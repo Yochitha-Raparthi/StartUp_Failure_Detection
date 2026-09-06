@@ -785,7 +785,7 @@ const AssessmentReport = () => {
 
                                                 <p>
                                                     <strong>Improvement:</strong>{" "}
-                                                    {item.Improvement || "N/A"}
+                                                    {item.improvement || "N/A"}
                                                 </p>
 
                                                 <p>
