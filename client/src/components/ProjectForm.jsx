@@ -25,6 +25,13 @@ function ProjectForm() {
 
 
     // ==========================================
+    // BACKEND API URL
+    // ==========================================
+
+    const API_URL = import.meta.env.VITE_API_URL;
+
+
+    // ==========================================
     // LOAD PREVIOUS PROJECT
     // ==========================================
 
@@ -107,7 +114,7 @@ function ProjectForm() {
             console.log("=================================");
 
             const aiResponse = await axios.post(
-                "http://localhost:5000/api/ai/analyze",
+                `${API_URL}/api/ai/analyze`,
                 formData
             );
 
@@ -136,7 +143,7 @@ function ProjectForm() {
             console.log("=================================");
 
             const recommendationResponse = await axios.post(
-                "http://localhost:5000/api/ai/recommend",
+                `${API_URL}/api/ai/recommend`,
                 {
                     project: formData,
 
