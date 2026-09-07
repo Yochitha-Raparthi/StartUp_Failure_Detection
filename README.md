@@ -335,3 +335,16 @@ Sharing with Stakeholders
            │  Dashboard  │   │ Assessment   │
            │             │   │    Report    │
            └─────────────┘   └──────────────┘
+👩‍💻 Project Developed By
+
+Yochitha Raparthi
+
+B.Tech — Artificial Intelligence & Data Science
+
+⭐ Project Summary
+
+Smart Failure Detection System is a complete AI-powered startup evaluation platform that combines market intelligence, competitor analysis, risk assessment, SWOT analysis, feasibility evaluation, and AI-powered strategic reasoning.
+
+The system evolved through four development milestones, from initial project submission and market analysis to a fully integrated dashboard, comprehensive assessment report, testing, and cloud deployment.
+
+The final system provides entrepreneurs with a structured and intelligent approach to identifying potential startup problems, understanding risks, evaluating feasibility, and making better business decisions.
