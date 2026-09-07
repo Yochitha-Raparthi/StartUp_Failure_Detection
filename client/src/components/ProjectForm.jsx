@@ -25,10 +25,11 @@ function ProjectForm() {
 
 
     // ==========================================
-    // BACKEND API URL
+    // DEPLOYED BACKEND URL
     // ==========================================
 
-    const API_URL = import.meta.env.VITE_API_URL;
+    const API_URL =
+        "https://startup-failure-detection.onrender.com";
 
 
     // ==========================================
@@ -106,7 +107,7 @@ function ProjectForm() {
 
 
             // ==========================================
-            // 1. GENERATE MAIN AI ANALYSIS
+            // 1. MAIN AI ANALYSIS
             // ==========================================
 
             console.log("=================================");
@@ -135,7 +136,7 @@ function ProjectForm() {
 
 
             // ==========================================
-            // 3. GENERATE STRATEGIC RECOMMENDATIONS
+            // 3. LANGGRAPH RECOMMENDATIONS
             // ==========================================
 
             console.log("=================================");
@@ -259,6 +260,10 @@ function ProjectForm() {
     };
 
 
+    // ==========================================
+    // UI
+    // ==========================================
+
     return (
 
         <div className="form-container">
@@ -266,9 +271,7 @@ function ProjectForm() {
             <h2>Project Submission</h2>
 
 
-            {/* ==========================================
-                SUCCESS MESSAGE
-            ========================================== */}
+            {/* SUCCESS MESSAGE */}
 
             {success && (
 
@@ -285,9 +288,7 @@ function ProjectForm() {
             )}
 
 
-            {/* ==========================================
-                LOADING MESSAGE
-            ========================================== */}
+            {/* LOADING MESSAGE */}
 
             {loading && (
 
@@ -307,9 +308,7 @@ function ProjectForm() {
                 <div className="project-grid">
 
 
-                    {/* ==========================================
-                        STARTUP NAME
-                    ========================================== */}
+                    {/* STARTUP NAME */}
 
                     <div className="form-group">
 
@@ -329,9 +328,7 @@ function ProjectForm() {
                     </div>
 
 
-                    {/* ==========================================
-                        INDUSTRY
-                    ========================================== */}
+                    {/* INDUSTRY */}
 
                     <div className="form-group">
 
@@ -364,9 +361,7 @@ function ProjectForm() {
                     </div>
 
 
-                    {/* ==========================================
-                        BUSINESS MODEL
-                    ========================================== */}
+                    {/* BUSINESS MODEL */}
 
                     <div className="form-group">
 
@@ -398,9 +393,7 @@ function ProjectForm() {
                     </div>
 
 
-                    {/* ==========================================
-                        TARGET MARKET
-                    ========================================== */}
+                    {/* TARGET MARKET */}
 
                     <div className="form-group">
 
@@ -420,9 +413,7 @@ function ProjectForm() {
                     </div>
 
 
-                    {/* ==========================================
-                        BUDGET
-                    ========================================== */}
+                    {/* BUDGET */}
 
                     <div className="form-group">
 
@@ -442,9 +433,7 @@ function ProjectForm() {
                     </div>
 
 
-                    {/* ==========================================
-                        DESCRIPTION
-                    ========================================== */}
+                    {/* DESCRIPTION */}
 
                     <div className="form-group full-width">
 
@@ -466,9 +455,7 @@ function ProjectForm() {
                 </div>
 
 
-                {/* ==========================================
-                    BUTTONS
-                ========================================== */}
+                {/* BUTTONS */}
 
                 <div className="button-row">
 
